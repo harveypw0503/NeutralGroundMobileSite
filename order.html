@@ -1,33 +1,4 @@
-<script type="text/javascript">
-        var gk_isXlsx = false;
-        var gk_xlsxFileLookup = {};
-        var gk_fileData = {};
-        function loadFileData(filename) {
-        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
-            try {
-                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
-                var firstSheetName = workbook.SheetNames[0];
-                var worksheet = workbook.Sheets[firstSheetName];
-
-                // Convert sheet to JSON to filter blank rows
-                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
-                // Filter out blank rows (rows where all cells are empty, null, or undefined)
-                var filteredData = jsonData.filter(row =>
-                    row.some(cell => cell !== '' && cell !== null && cell !== undefined)
-                );
-
-                // Convert filtered JSON back to CSV
-                var csv = XLSX.utils.aoa_to_sheet(filteredData); // Create a new sheet from filtered array of arrays
-                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
-                return csv;
-            } catch (e) {
-                console.error(e);
-                return "";
-            }
-        }
-        return gk_fileData[filename] || "";
-        }
-        </script><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -221,7 +192,7 @@
     <div class="mobile-container">
         <header>
             <div class="logo">
-                <img src="green20logo_17104536512028329_1712105311.png" 
+                <img src="a2623ba7-89ad-4174-9326-78e9f2a69175/green20logo_17104536512028329_1712105311.png" 
                      alt="Neutral Grounds Logo" 
                      loading="lazy">
             </div>
@@ -239,7 +210,7 @@
         </header>
 
         <section class="hero">
-            <img src="2024-10-01_21-52-11_1727837559.jpg" 
+            <img src="a2623ba7-89ad-4174-9326-78e9f2a69175/2024-10-01_21-52-11_1727837559.jpg" 
                  alt="Neutral Grounds Coffee Shop" 
                  loading="lazy">
             <div class="hero-overlay">
@@ -249,18 +220,22 @@
 
         <section class="order">
             <h2>Order Online</h2>
+            <p>Fuel up for game night with a quick order! Pick your drink or bite below.</p>
             <div class="order-form">
                 <label for="item">Select Item</label>
                 <select id="item">
-                    <option value="latte">Dragon’s Breath Latte - $4.50</option>
-                    <option value="espresso">Critical Hit Espresso - $3.75</option>
-                    <option value="energy">Gamer’s Energy Drink - $3.00</option>
+                    <option value="cafe-miel">Cafe Miel - $5.00</option>
+                    <option value="latte">Latte - $4.50</option>
+                    <option value="cold-brew">Cold Brew - $4.25</option>
+                    <option value="matcha-latte">Matcha Latte - $4.25</option>
+                    <option value="egg-bites">Egg Bites - $5.00</option>
+                    <option value="maple-donut">Maple Vanilla Donut - $3.00</option>
                 </select>
                 <label for="add-on">Add-On</label>
                 <select id="add-on">
                     <option value="none">None</option>
-                    <option value="scone">Wizard’s Scone - $3.25</option>
-                    <option value="dice">Custom Dice Set - $5.00</option>
+                    <option value="oatmeal">Oatmeal - $3.49</option>
+                    <option value="juice-box">Juice Box - $2.10</option>
                 </select>
                 <label for="name">Name</label>
                 <input type="text" id="name" placeholder="Your name">
@@ -269,14 +244,14 @@
                 <button onclick="alert('Order submission coming soon!')">Submit Order</button>
             </div>
             <div class="order-image">
-                <img src="2024-05-07_10-59-08_1715097569.jpg" 
+                <img src="beee020a-5e5d-46dc-a7de-c76024cab410/2024-05-07_10-59-08_1715097569.jpg" 
                      alt="Barista crafting your coffee" 
                      loading="lazy">
             </div>
         </section>
 
         <footer>
-            <a href="tel:+14025551234">📞 Call</a>
+            <a href="tel:+14026430018">📞 Call</a>
             <a href="https://maps.google.com/?q=Neutral+Grounds+Seward+NE">🗺️ Map</a>
             <a href="https://www.instagram.com/neutralgrounds.ne/">📷 Instagram</a>
         </footer>
